@@ -1,18 +1,25 @@
-apiVersion: training.eduk8s.io/v1alpha1
+apiVersion: training.eduk8s.io/v1alpha2
 kind: Workshop
 metadata:
   name: lab-spring-boot
+  namespace: default
 spec:
   vendor: eduk8s.io
   title: Getting Started with Spring Boot
   description: Create a Spring Boot application and deploy it to Kubernetes
-  url: https://github.com/scratches/lab-spring-boot
-  #image: dsyer/lab-spring-boot:master
-  content: github.com/scratches/lab-spring-boot
+  url: https://github.com/kdvolder/lab-spring-boot
   duration: 15m
-  image: dsyer/ws
+  content: github.com/kdvolder/lab-spring-boot
   session:
     budget: small
+    patches:
+      containers:
+      - name: workshop
+        resources:
+          requests:
+            memory: "1Gi"
+          limits:
+            memory: "1Gi"
     applications:
       terminal:
         enabled: true

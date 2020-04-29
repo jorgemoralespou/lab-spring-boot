@@ -1,13 +1,12 @@
-FROM quay.io/eduk8s/workshop-dashboard:master
+FROM quay.io/eduk8s/jdk11-environment:master
 
-USER root
+RUN curl https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-java-docker/latest.package.json > /opt/theia/package.json
+RUN HOME=/opt/theia && \
+    cd /opt/theia && \
+    rm -fr node_modules && \
+    yarn --cache-folder ./ycache && rm -rf ./ycache && \
+    NODE_OPTIONS="--max_old_space_size=4096" yarn theia build ; \
+    yarn theia download:plugins && \
+    rm -rf ./ycache
 
-RUN cd /usr/local && \
-    curl -L https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.7_10.tar.gz > jdk.tgz && \
-    tar -zxf jdk.tgz && mv jdk-11* jdk && rm jdk.tgz && mkdir -p bin && ln -s /usr/local/jdk/bin/* bin
-
-USER 1001
-
-COPY --chown=1001:0 . /home/eduk8s/
-
-ENV JAVA_HOME=/usr/local/jdk
+ENV THEIA_DEFAULT_PLUGINS=local-dir:/opt/theia/plugins
