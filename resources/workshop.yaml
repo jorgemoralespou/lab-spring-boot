@@ -9,7 +9,8 @@ spec:
   description: Create a Spring Boot application and deploy it to Kubernetes
   url: https://github.com/kdvolder/lab-spring-boot
   duration: 15m
-  content: github.com/kdvolder/lab-spring-boot
+  content: 
+    files: github.com/kdvolder/lab-spring-boot
   session:
     budget: small
     patches:

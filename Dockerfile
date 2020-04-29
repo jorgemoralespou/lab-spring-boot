@@ -1,6 +1,7 @@
 FROM quay.io/eduk8s/jdk11-environment:master
 
-RUN curl https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-java-docker/latest.package.json > /opt/theia/package.json
+#RUN curl https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-java-docker/latest.package.json > /opt/theia/package.json
+COPY theia/package.json /opt/theia/package.json
 RUN HOME=/opt/theia && \
     cd /opt/theia && \
     rm -fr node_modules && \
@@ -9,4 +10,5 @@ RUN HOME=/opt/theia && \
     yarn theia download:plugins && \
     rm -rf ./ycache
 
+COPY theia/start-theia /opt/eduk8s/sbin/start-theia
 ENV THEIA_DEFAULT_PLUGINS=local-dir:/opt/theia/plugins
