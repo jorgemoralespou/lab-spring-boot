@@ -13,15 +13,15 @@ spec:
     image: boykoalex/eduk8s-spring-boot
     files: github.com/kdvolder/lab-spring-boot
   session:
-    budget: small
+    budget: large
     patches:
       containers:
       - name: workshop
         resources:
           requests:
-            memory: "1Gi"
+            memory: "4Gi"
           limits:
-            memory: "1Gi"
+            memory: "4Gi"
     applications:
       terminal:
         enabled: true
