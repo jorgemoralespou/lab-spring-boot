@@ -9,4 +9,3 @@ spec:
     orphaned: 5m
   workshops:
     - name: lab-spring-boot
-    - name: lab-k8s-fundamentals
