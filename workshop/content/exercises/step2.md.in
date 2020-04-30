@@ -74,4 +74,4 @@ docker push {{ REGISTRY_HOST }}/springguides/demo
 
 The image needs to be pushed to an accessible registry because Kubernetes pulls the image from inside its Kubelets (nodes), which are not in general connected to the local docker daemon.
 
-<iframe style="width=100%;heigth=800px" src="${INGRESS_PROTOCOL}://${SESSION_NAMESPACE}-initializr.${INGRESS_DOMAIN}/"></iframe>
+<iframe style="width:100%;height:900px" src="${INGRESS_PROTOCOL}://${SESSION_NAMESPACE}-initializr.${INGRESS_DOMAIN}/"></iframe>
