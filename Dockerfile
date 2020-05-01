@@ -1,8 +1,7 @@
 FROM boykoalex/eduk8s-initializr-test as initializr
 FROM kdvolder/sts4-theia-snapshot:stable as theia
 
-FROM kdvolder/eduk8s-jdk8-env
-
+FROM quay.io/eduk8s/jdk11-environment:master
 RUN cd /opt && \
     mkdir initializr
 COPY --from=initializr /opt/initializr/initializr.jar /opt/initializr/initializr.jar
