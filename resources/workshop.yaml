@@ -10,7 +10,7 @@ spec:
   url: https://github.com/kdvolder/lab-spring-boot
   duration: 15m
   content: 
-    image: boykoalex/eduk8s-spring-boot
+    image: kdvolder/eduk8s-spring-boot
     files: github.com/kdvolder/lab-spring-boot
   session:
     budget: large
@@ -35,8 +35,8 @@ spec:
       docker:
         enabled: true
     ingresses:
-      - name: initializr
-        port: 10189
+    - name: initializr
+      port: 10189
     dashboards:
-      - name: initializr
-        url: "$(ingress_protocol)://$(session_namespace)-initializr.$(ingress_domain)/"      
+    - name: initializr
+      url: "$(ingress_protocol)://$(session_namespace)-initializr.$(ingress_domain)/"      

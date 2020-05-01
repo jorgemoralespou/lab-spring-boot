@@ -4,7 +4,8 @@ metadata:
   name: lab-spring-boot
 spec:
   portal:
-    capacity: 1
+    reserved: 1
+    capacity: 5
     expires: 60m
     orphaned: 5m
   workshops:
