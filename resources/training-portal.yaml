@@ -2,6 +2,7 @@ apiVersion: training.eduk8s.io/v1alpha1
 kind: TrainingPortal
 metadata:
   name: lab-spring-boot
+  namespace: default
 spec:
   portal:
     reserved: 1
