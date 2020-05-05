@@ -36,6 +36,7 @@ The tab similar to Theia IDE can be setup easily via a small change in `resource
       url: "$(ingress_protocol)://$(session_namespace)-initializr.$(ingress_domain)/"      
 
 ```
+(See for more details eduk8s documentation: https://docs.eduk8s.io/en/latest/runtime-environment/workshop-definition.html#adding-custom-dashboard-tabs)
 
 Lastly, one can even embedd the Initializr UI into workshop content Markdown pages with an iframe element:
 ```
