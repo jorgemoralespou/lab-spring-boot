@@ -10,7 +10,7 @@ spec:
   url: https://github.com/kdvolder/lab-spring-boot
   duration: 15m
   content: 
-    image: kdvolder/eduk8s-spring-boot
+    image: kdvolder/eduk8s-spring-boot:theia-1.0.0
     files: github.com/kdvolder/lab-spring-boot
   session:
     budget: large

@@ -3,7 +3,7 @@
     "theia": {
         "frontend": {
             "config": {
-                "applicationName": "Theia Java Example",
+                "applicationName": "Theia Java For Eduk8s",
                 "preferences": {
                     "files.enableTrash": false
                 }
@@ -11,22 +11,22 @@
         }
     },
     "dependencies": {
-        "@theia/editor-preview": "next",
-        "@theia/file-search": "next",
-        "@theia/getting-started": "next",
-        "@theia/git": "next",
-        "@theia/json": "next",
-        "@theia/markers": "next",
-        "@theia/messages": "next",
-        "@theia/navigator": "next",
-        "@theia/outline-view": "next",
-        "@theia/plugin": "next",
-        "@theia/plugin-ext": "next",
-        "@theia/plugin-ext-vscode": "next",
-        "@theia/preferences": "next",
-        "@theia/search-in-workspace": "next",
-        "@theia/terminal": "next",
-        "@theia/vsx-registry": "next"
+        "@theia/editor-preview": "1.0.0",
+        "@theia/file-search": "1.0.0",
+        "@theia/getting-started": "1.0.0",
+        "@theia/git": "1.0.0",
+        "@theia/json": "1.0.0",
+        "@theia/markers": "1.0.0",
+        "@theia/messages": "1.0.0",
+        "@theia/navigator": "1.0.0",
+        "@theia/outline-view": "1.0.0",
+        "@theia/plugin": "1.0.0",
+        "@theia/plugin-ext": "1.0.0",
+        "@theia/plugin-ext-vscode": "1.0.0",
+        "@theia/preferences": "1.0.0",
+        "@theia/search-in-workspace": "1.0.0",
+        "@theia/terminal": "1.0.0",
+        "@theia/vsx-registry": "1.0.0"
     },
     "theiaPluginsDir": "plugins",
     "theiaPlugins": {
@@ -62,8 +62,7 @@
         "vscode-java-debug": "https://github.com/microsoft/vscode-java-debug/releases/download/0.24.0/vscjava.vscode-java-debug-0.24.0.vsix",
         "vscode-java-test": "https://github.com/microsoft/vscode-java-test/releases/download/0.22.0/vscjava.vscode-java-test-0.22.0.vsix",
         "vscode-java-dependency-viewer": "https://github.com/microsoft/vscode-java-dependency/releases/download/0.6.0/vscode-java-dependency-0.6.0.vsix",
-        "vscode-spring-boot": "https://dist.springsource.com/release/STS4/vscode/vscode-spring-boot-1.17.0-RC.1.vsix",
-        "vscode-kubernetes-tools": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-kubernetes-tools/vsextensions/vscode-kubernetes-tools/1.2.0/vspackage"
+        "vscode-spring-boot": "https://dist.springsource.com/release/STS4/vscode/vscode-spring-boot-1.17.0-RC.1.vsix"
     },
     "resolutions": {
         "vscode-json-languageserver": "1.2.2",
@@ -72,6 +71,6 @@
         "**/vscode-json-languageserver/**/vscode-languageserver": "6.0.0-next.1"
     },
     "devDependencies": {
-        "@theia/cli": "next"
+        "@theia/cli": "1.0.0"
     }
 }
