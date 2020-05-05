@@ -9,8 +9,8 @@ Therefore the trick is to override or provide something extra would be store or 
 
 ## Initializr
 The Spring Initializr app has been modified to generate the project at a specific location locally: `/generate` end point. The Web UI has been changed accordingly to call `/generate` end point when **Generate** button is clicked. The location to store the generated project is to be specified via the property `initializr.initializr.project-location-container`.
-The backend for the modified Spring Initializr - **initializr**: https://github.com/BoykoAlex/initializr branch: **eduk8s**
-The front end serving piece of the modified Initializr - **start.spring.io**: https://github.com/BoykoAlex/start.spring.io branch **eduk8s**
+- The backend for the modified Spring Initializr - **initializr**: https://github.com/BoykoAlex/initializr branch: **eduk8s**
+- The front end serving piece of the modified Initializr - **start.spring.io**: https://github.com/BoykoAlex/start.spring.io branch **eduk8s**
 (Build instructions: build **initializr** first `./mvnw clean install -DskipTests` and then **start.spring.io** with the same command. Then `start.spring.io/start-site/target/start-site-exec.jar` is the fat JAR for the Initializr app)
 
 The docker image file for the modified Initializr: https://github.com/BoykoAlex/start.spring.io/blob/eduk8s/start-site/Dockerfile
@@ -41,7 +41,6 @@ The tab similar to Theia IDE can be setup easily via a small change in `resource
 Lastly, one can even embedd the Initializr UI into workshop content Markdown pages with an iframe element:
 ```
 <iframe style="width:100%;height:900px" src="${INGRESS_PROTOCOL}://${SESSION_NAMESPACE}-initializr.${INGRESS_DOMAIN}/"></iframe>
-
 ```
 The trick here is that variables in the URL need to be substituted at the session deployment time by a script that would be executed at the session container start up time. The example script is kept in `workshop/setup.d/create-resources.sh`. It takes `workshop/content/exercises/step.md.in` file and substitutes the variables with the values of corresponding environment variables and stores the result in `step2.md` file. Note that the whole workshop folder is placed in the container such that the `create-resources.sh` is executed at the startup time and no further work is required in the `Dockefile`
 
