@@ -21,6 +21,7 @@ RUN rm -fr /opt/theia && mkdir /opt/theia
 COPY --from=theia --chown=1001:0 /home/theia /opt/theia/
 #COPY --from=theia --chown=1001:0 /theia-app /opt/theia/
 COPY theia/plugins/*.vsix /opt/theia/plugins/
+RUN curl https://dist.springsource.com/release/STS4/vscode/vscode-spring-boot-1.17.0-RC.1.vsix > /opt/theia/plugins/vscode-spring-boot-1.17.0-RC.1.vsix
 COPY theia/start-theia /opt/eduk8s/sbin/start-theia
 
 RUN cd /opt/eduk8s/etc && \
