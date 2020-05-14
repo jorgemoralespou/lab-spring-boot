@@ -1,4 +1,5 @@
 FROM boykoalex/eduk8s-initializr-test as initializr
+FROM boykoalex/spring-boot-maven-cache:2.2.7 as maven-cache
 #FROM kdvolder/sts4-theia-snapshot:stable as theia
 FROM theiaide/theia-java:1.0.0 as theia
 
@@ -6,6 +7,9 @@ FROM quay.io/eduk8s/jdk11-environment:master
 RUN cd /opt && \
     mkdir initializr
 COPY --from=initializr /opt/initializr/initializr.jar /opt/initializr/initializr.jar
+
+RUN cd /home/eduk8s
+COPY --from=maven-cache --chown=1001:0 /root/.m2 /home/eduk8s/.m2
 
 #RUN curl  https://raw.githubusercontent.com/spring-projects/sts4/master/concourse/theia-docker-image/package.json > /opt/theia/package.json
 #RUN curl https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-java-docker/next.package.json > /opt/theia/package.json

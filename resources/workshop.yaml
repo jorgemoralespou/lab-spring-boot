@@ -10,7 +10,7 @@ spec:
   url: https://github.com/kdvolder/lab-spring-boot
   duration: 15m
   content: 
-    image: kdvolder/eduk8s-spring-boot
+    image: boykoalex/eduk8s-spring-boot
     files: github.com/kdvolder/lab-spring-boot
   session:
     budget: large
